@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import UploadButton from '../components/UploadButton';
 
 export const metadata: Metadata = {
   title: '김상진 | Sangjin Kim',
@@ -15,6 +16,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Header />
         <main>{children}</main>
         <Footer />
+        <UploadButton />
       </body>
     </html>
   );
