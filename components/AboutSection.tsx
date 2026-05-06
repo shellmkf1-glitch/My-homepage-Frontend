@@ -6,19 +6,12 @@ export default function AboutSection() {
 
           {/* 사진 영역 — 실제 사진으로 교체 시 <img> 태그로 변경 */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative h-80 w-80 overflow-hidden rounded-[2rem] bg-gradient-to-br from-primary-600 to-primary-900 shadow-soft md:h-96 md:w-96">
-              <div className="flex h-full w-full items-center justify-center">
-                <span className="select-none text-7xl font-bold tracking-widest text-white/30">
-                  KSJ
-                </span>
-              </div>
-              {/* 사진 교체 방법: 위의 div 전체를 아래로 대체
+            <div className="relative h-80 w-80 overflow-hidden rounded-[2rem] shadow-soft md:h-96 md:w-96">
               <img
                 src="/profile.jpg"
                 alt="김상진 프로필 사진"
-                className="h-full w-full object-cover"
+                className="h-full w-full object-cover object-top"
               />
-              */}
             </div>
           </div>
 
@@ -50,7 +43,7 @@ export default function AboutSection() {
 
             <div className="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3">
               {[
-                { label: '근속 연수', value: '30년+' },
+                { label: '', value: 'Shell Lubricant' },
                 { label: '소속', value: '한국쉘석유' },
                 { label: '담당부서', value: '신규사업개발부' },
               ].map((item) => (
