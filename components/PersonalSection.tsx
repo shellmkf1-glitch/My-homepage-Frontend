@@ -5,8 +5,8 @@ import { useState } from 'react';
 const photos = [
   { src: '/personal/photo1.jpg', alt: '쿰부 히말라야 2013' },
   { src: '/personal/photo2.jpg', alt: 'ABC 트레킹 2014' },
-  { src: '/personal/photo3.jpg', alt: '3패스 트레킹 2016' },
-  { src: '/personal/photo4.jpg', alt: '3패스 트레킹 2016' },
+  { src: '/personal/photo3.jpg', alt: '칼라파타르' },
+  { src: '/personal/photo4.jpg', alt: '에베레스트 베이스캠프' },
   { src: '/personal/photo5.jpg', alt: '마나슬루 트레킹 2017' },
   { src: '/personal/photo6.jpg', alt: '안나푸르나 서킷 2019' },
 ];
@@ -140,7 +140,7 @@ export default function PersonalSection() {
 
           {active === '관심거리' && (
             <div className="mx-auto max-w-2xl space-y-4">
-              {['바이브코딩', '앱 개발', '건강'].map((title) => (
+              {['바이브코딩', '앱 개발', 'α'].map((title) => (
                 <div key={title} className="rounded-2xl border border-slate-200 bg-white px-8 py-6 shadow-soft">
                   <p className="text-2xl font-bold text-slate-900">{title}</p>
                 </div>
