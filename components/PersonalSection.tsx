@@ -11,7 +11,7 @@ const photos = [
   { src: '/personal/photo6.jpg', alt: '안나푸르나 서킷 2019' },
 ];
 
-const tabs = ['추억', '현재', '버킷리스트'] as const;
+const tabs = ['추억', '현재', '버킷리스트', '관심거리'] as const;
 type Tab = typeof tabs[number];
 
 export default function PersonalSection() {
@@ -119,7 +119,7 @@ export default function PersonalSection() {
                 },
                 {
                   title: 'VIA Francigena',
-                  desc: '영국 캔터베리에서 로마까지',
+                  desc: '루카에서 바티칸까지',
                   img: 'https://images.unsplash.com/photo-1605448098495-5d4dfae4ab40?w=800&q=80',
                 },
               ].map((item) => (
@@ -133,6 +133,16 @@ export default function PersonalSection() {
                     <p className="text-xl font-bold italic text-amber-500">{item.title}</p>
                     <p className="mt-1 text-sm text-slate-500">{item.desc}</p>
                   </div>
+                </div>
+              ))}
+            </div>
+          )}
+
+          {active === '관심거리' && (
+            <div className="mx-auto max-w-2xl space-y-4">
+              {['바이브코딩', '앱 개발', '건강'].map((title) => (
+                <div key={title} className="rounded-2xl border border-slate-200 bg-white px-8 py-6 shadow-soft">
+                  <p className="text-2xl font-bold text-slate-900">{title}</p>
                 </div>
               ))}
             </div>
