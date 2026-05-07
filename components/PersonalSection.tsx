@@ -23,9 +23,9 @@ export default function PersonalSection() {
 
         {/* 헤더 */}
         <div className="mx-auto max-w-2xl text-center">
-          <p className="mb-4 text-sm font-semibold uppercase tracking-[0.24em] text-primary-600">
-            Personal
-          </p>
+          <h1 className="mb-4 inline-block rounded-xl bg-yellow-400 px-6 py-2 text-5xl font-extrabold uppercase tracking-widest text-primary-600 sm:text-6xl">
+            PERSONAL
+          </h1>
           <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             걷기와 세상의 아름다움을<br />
             사랑하는 <span className="text-primary-600">방랑자</span>
@@ -59,12 +59,15 @@ export default function PersonalSection() {
           {active === '추억' && (
             <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
               {photos.map((photo, idx) => (
-                <div key={idx} className="overflow-hidden rounded-2xl shadow-soft">
+                <div key={idx} className="relative overflow-hidden rounded-2xl shadow-soft">
                   <img
                     src={photo.src}
                     alt={photo.alt}
                     className="h-64 w-full object-cover transition duration-300 hover:scale-105"
                   />
+                  <div className="absolute bottom-0 left-0 right-0 bg-black/50 px-4 py-2">
+                    <p className="text-sm font-semibold text-white">{photo.alt}</p>
+                  </div>
                 </div>
               ))}
             </div>
@@ -78,8 +81,11 @@ export default function PersonalSection() {
                 <h3 className="mb-4 text-xl font-bold text-slate-800">제주 올레</h3>
                 <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
                   {['/personal/jeju/jeju1.jpg', '/personal/jeju/jeju2.jpg', '/personal/jeju/jeju3b.jpg'].map((src, idx) => (
-                    <div key={idx} className="overflow-hidden rounded-2xl shadow-soft">
-                      <img src={src} alt={`제주 올레 ${idx + 1}`} className="h-64 w-full object-cover transition duration-300 hover:scale-105" />
+                    <div key={idx} className="relative overflow-hidden rounded-2xl shadow-soft">
+                      <img src={src} alt={`제주올레 ${idx + 1}`} className="h-64 w-full object-cover transition duration-300 hover:scale-105" />
+                      <div className="absolute bottom-0 left-0 right-0 bg-black/50 px-4 py-2">
+                        <p className="text-sm font-semibold text-white">제주올레</p>
+                      </div>
                     </div>
                   ))}
                 </div>
@@ -89,13 +95,11 @@ export default function PersonalSection() {
               <div>
                 <h3 className="mb-4 text-xl font-bold text-slate-800">서울 둘레길</h3>
                 <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
-                  {[1, 2, 3].map((n) => (
-                    <div key={n} className="flex aspect-[4/3] items-center justify-center rounded-2xl bg-gradient-to-br from-slate-200 to-slate-300 shadow-soft">
-                      <div className="text-center text-slate-400">
-                        <svg className="mx-auto h-10 w-10" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" d="m2.25 15.75 5.159-5.159a2.25 2.25 0 0 1 3.182 0l5.159 5.159m-1.5-1.5 1.409-1.409a2.25 2.25 0 0 1 3.182 0l2.909 2.909M3.75 18h16.5M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-                        </svg>
-                        <p className="mt-2 text-xs">사진 {n}</p>
+                  {['/personal/seoul1.jpg', '/personal/seoul2.jpg', '/personal/seoul3.jpg'].map((src, idx) => (
+                    <div key={idx} className="relative overflow-hidden rounded-2xl shadow-soft">
+                      <img src={src} alt={`서울 둘레길 ${idx + 1}`} className="h-64 w-full object-cover transition duration-300 hover:scale-105" />
+                      <div className="absolute bottom-0 left-0 right-0 bg-black/50 px-4 py-2">
+                        <p className="text-sm font-semibold text-white">서울 둘레길 {idx + 1}</p>
                       </div>
                     </div>
                   ))}
@@ -111,12 +115,12 @@ export default function PersonalSection() {
                 {
                   title: 'Camino de Santiago',
                   desc: '스페인 산티아고 순례길',
-                  img: 'https://images.unsplash.com/photo-lsBisyiGqLw?w=800&q=80',
+                  img: 'https://images.unsplash.com/photo-1641218356058-1a8988a5135b?w=800&q=80',
                 },
                 {
                   title: 'VIA Francigena',
                   desc: '영국 캔터베리에서 로마까지',
-                  img: 'https://images.unsplash.com/photo-JTWxlrBwh_c?w=800&q=80',
+                  img: 'https://images.unsplash.com/photo-1605448098495-5d4dfae4ab40?w=800&q=80',
                 },
               ].map((item) => (
                 <div key={item.title} className="overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-soft">
