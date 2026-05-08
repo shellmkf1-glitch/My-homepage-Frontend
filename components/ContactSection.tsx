@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import QRCode from 'react-qr-code';
+import { QRCodeCanvas } from 'qrcode.react';
 
 export default function ContactSection() {
   const [form, setForm] = useState({ name: '', email: '', message: '' });
@@ -47,13 +47,14 @@ export default function ContactSection() {
 
               {/* QR 코드 */}
               <div className="flex flex-col items-start gap-3">
-                <div className="rounded-2xl bg-white p-4 shadow-md">
-                  <QRCode
+                <div className="rounded-2xl bg-white p-3 shadow-md">
+                  <QRCodeCanvas
                     value={process.env.NEXT_PUBLIC_SITE_URL ?? (typeof window !== 'undefined' ? window.location.origin : '')}
                     size={200}
                     level="L"
                     fgColor="#000000"
                     bgColor="#ffffff"
+                    marginSize={4}
                   />
                 </div>
                 <p className="text-xs text-slate-400">QR코드로 홈페이지 바로가기</p>
