@@ -50,7 +50,7 @@ export default function ContactSection() {
               <div className="flex flex-col items-start gap-3">
                 <div className="rounded-2xl bg-white p-4 shadow-md">
                   <QRCode
-                    value={process.env.NEXT_PUBLIC_SITE_URL ?? 'http://localhost:3000'}
+                    value={process.env.NEXT_PUBLIC_SITE_URL ?? (typeof window !== 'undefined' ? window.location.origin : '')}
                     size={120}
                     fgColor="#1e293b"
                   />
