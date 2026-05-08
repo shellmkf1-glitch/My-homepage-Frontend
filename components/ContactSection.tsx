@@ -51,7 +51,8 @@ export default function ContactSection() {
                 <div className="rounded-2xl bg-white p-4 shadow-md">
                   <QRCode
                     value={process.env.NEXT_PUBLIC_SITE_URL ?? (typeof window !== 'undefined' ? window.location.origin : '')}
-                    size={120}
+                    size={180}
+                    level="L"
                     fgColor="#1e293b"
                   />
                 </div>
