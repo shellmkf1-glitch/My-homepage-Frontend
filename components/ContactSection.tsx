@@ -18,10 +18,9 @@ export default function ContactSection() {
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID!,
         {
           subject: `홈페이지 ${form.name} 메세지`,
-          from_name: form.name,
-          from_email: form.email,
+          name: form.name,
+          email: form.email,
           message: form.message,
-          to_email: 'shell222@nate.com',
         },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
       );
