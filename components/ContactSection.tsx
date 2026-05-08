@@ -22,11 +22,12 @@ export default function ContactSection() {
           email: form.email,
           message: form.message,
         },
-        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY!
+        { publicKey: process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY! }
       );
       setStatus('done');
       setForm({ name: '', email: '', message: '' });
-    } catch {
+    } catch (err) {
+      console.error('EmailJS 오류:', err);
       setStatus('error');
     }
   };
