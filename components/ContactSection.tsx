@@ -51,9 +51,10 @@ export default function ContactSection() {
                 <div className="rounded-2xl bg-white p-4 shadow-md">
                   <QRCode
                     value={process.env.NEXT_PUBLIC_SITE_URL ?? (typeof window !== 'undefined' ? window.location.origin : '')}
-                    size={180}
+                    size={200}
                     level="L"
-                    fgColor="#1e293b"
+                    fgColor="#000000"
+                    bgColor="#ffffff"
                   />
                 </div>
                 <p className="text-xs text-slate-400">QR코드로 홈페이지 바로가기</p>
